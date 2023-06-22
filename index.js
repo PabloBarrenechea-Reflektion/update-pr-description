@@ -28,6 +28,7 @@ const run = async () => {
   }
 
   const pullRequest = pulls.find((p) => p.state === 'open');
+  console.log(JSON.stringify(pullRequest, null, 4));
   if (pullRequest == null) {
     throw new Error(`No open pull requests found for a source branch "${sourceBranch || '<not found>'}" and a base branch "${baseBranch || '<not specified>'}"`);
   }
